@@ -31,6 +31,4 @@ public class ClassIteratorTest  {
         Assert.assertFalse(it.hasNext());
     }
 
-
-
 }
