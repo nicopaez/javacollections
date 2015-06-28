@@ -1,16 +1,16 @@
 package com.nicopaez.collections;
 
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by nicopaez on 6/20/15.
  */
-public class ClazzIterator implements Iterator {
+public class ClassIterator implements Iterator {
     private final Class<?> targetClazz;
     private final Iterator innerIterator;
+    private Object currentObject;
 
-    public ClazzIterator(Iterator iterator, Class<?> clazz) {
+    public ClassIterator(Iterator iterator, Class<?> clazz) {
         this.targetClazz = clazz;
         this.innerIterator = iterator;
     }
@@ -18,7 +18,9 @@ public class ClazzIterator implements Iterator {
     @Override
     public boolean hasNext() {
         while (this.innerIterator.hasNext()) {
-            if (innerIterator.next().getClass() == this.targetClazz) {
+            Object pointer = innerIterator.next();
+            if ( pointer.getClass() == this.targetClazz) {
+                currentObject = pointer;
                 return true;
             }
         }
@@ -27,11 +29,11 @@ public class ClazzIterator implements Iterator {
 
     @Override
     public Object next() {
-        return null;
+        return this.currentObject;
     }
 
     @Override
     public void remove() {
-
+       throw new UnsupportedOperationException();
     }
 }
