@@ -62,4 +62,23 @@ public class ClassIteratorTest {
         it.remove();
     }
 
+    @Test
+    public void commonUse(){
+        List collection = new ArrayList();
+        collection.add(new Integer(1));
+        collection.add(new Integer(2));
+        collection.add(new String("Hello!"));
+        collection.add(new Integer(1));
+        collection.add(new Integer(2));
+        collection.add(new String("Hello!"));
+        int counter = 0;
+        Iterator it = new ClassIterator(collection.iterator(), String.class);
+        while (it.hasNext()) {
+            Object obj = it.next();
+            Assert.assertEquals(String.class, obj.getClass());
+            counter++;
+        }
+        Assert.assertEquals(2, counter);
+    }
+
 }
