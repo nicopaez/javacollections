@@ -17,6 +17,7 @@ public class ClassIterator implements Iterator {
 
     @Override
     public boolean hasNext() {
+        int a = 0;
         while (this.innerIterator.hasNext()) {
             Object pointer = innerIterator.next();
             if ( pointer.getClass() == this.targetClazz) {
