@@ -2,9 +2,6 @@ package com.nicopaez.collections;
 
 import java.util.Iterator;
 
-/**
- * Created by nicopaez on 6/20/15.
- */
 public class ClassIterator implements Iterator {
     private final Class<?> targetClazz;
     private final Iterator innerIterator;
@@ -17,7 +14,6 @@ public class ClassIterator implements Iterator {
 
     @Override
     public boolean hasNext() {
-        int a = 0;
         while (this.innerIterator.hasNext()) {
             Object pointer = innerIterator.next();
             if ( pointer.getClass() == this.targetClazz) {
