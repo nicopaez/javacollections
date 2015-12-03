@@ -15,4 +15,10 @@ public class CircularIterator implements Iterator {
     public Object next() {
         return null;
     }
+
+    @Override
+    public void remove() {
+        throw new UnsupportedOperationException();
+    }
+
 }
