@@ -8,7 +8,23 @@
     <packaging>jar</packaging>
 
     <name>com.nicopaez.collections</name>
-    <url>http://maven.apache.org</url>
+    <description>This project offers a set of utilities to work with collections.</description>
+    <url>https://github.com/nicopaez/javacollections</url>
+
+    <developers>
+        <developer>
+            <name>Nicolas Paez</name>
+            <email>nicopaez@gmail.com</email>
+            <organization>NicoPaez</organization>
+            <organizationUrl>http://nicopaez.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/nicopaez/javacollections.git</connection>
+        <developerConnection>scm:git:ssh://github.com:nicopaez/javacollections.git</developerConnection>
+        <url>http://github.com/nicopaez/javacollections/tree/master</url>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -65,5 +81,16 @@
             </plugin>
         </plugins>
     </reporting>
-
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype-nexus-staging</id>
+            <name>Nexus Release Repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+    </distributionManagement>
 </project>
